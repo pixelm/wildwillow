@@ -1,0 +1,1025 @@
+:root {
+  --bg: #fafaf7;
+  --surface: #ffffff;
+  --surface-subtle: #f3f1ea;
+  --text: #1c1c1a;
+  --text-muted: #6a6a64;
+  --text-dim: #9a9a92;
+  --border: #e2dfd4;
+  --border-strong: #c9c6ba;
+  --accent: #2d5f3f;
+
+  --ayurveda: #534ab7;
+  --ayurveda-soft: #eeedfe;
+  --herbalism: #3b6d11;
+  --herbalism-soft: #eaf3de;
+  --yoga: #0f6e56;
+  --yoga-soft: #e1f5ee;
+  --breathwork: #185fa5;
+  --breathwork-soft: #e6f1fb;
+
+  --warning: #854f0b;
+  --warning-bg: #faeeda;
+  --warning-border: #f0d089;
+
+  --radius: 10px;
+  --radius-lg: 14px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(45, 95, 63, 0.3);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s ease;
+}
+
+a:hover { text-decoration-color: var(--accent); }
+
+h1, h2, h3 {
+  font-family: 'Newsreader', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  color: var(--text);
+}
+
+em {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.02em;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== Site header ===== */
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+
+.logo {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.015em;
+}
+
+.site-nav { display: flex; gap: 28px; }
+.site-nav a { font-size: 15px; color: var(--text-muted); text-decoration: none; }
+.site-nav a:hover { color: var(--text); }
+
+/* ===== Breadcrumb ===== */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+.breadcrumb a { color: var(--text-muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--text); }
+.breadcrumb .sep { color: var(--text-dim); }
+
+/* ===== Condition header ===== */
+
+.condition-header {
+  margin-bottom: 48px;
+  max-width: 720px;
+}
+
+.condition-header h1 {
+  font-size: 44px;
+  line-height: 1.05;
+  margin-bottom: 8px;
+}
+
+.also-known-as {
+  font-size: 15px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.tags { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--surface-subtle);
+  color: var(--text-muted);
+}
+
+.tag-dosha { background: var(--ayurveda-soft); color: var(--ayurveda); }
+
+/* ===== Prelude blocks ===== */
+
+.prelude-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 56px;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.prelude-block { min-width: 0; }
+
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.bullet-list { list-style: none; }
+
+.bullet-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.bullet-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.timeline { list-style: none; }
+
+.timeline li {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.timeline .day {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  min-width: 70px;
+  flex-shrink: 0;
+}
+
+.timeline .event { line-height: 1.5; }
+
+/* ===== Results grid ===== */
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.column-title {
+  font-size: 26px;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+/* ===== Modality sections ===== */
+
+.modality { margin-bottom: 36px; }
+.modality:last-child { margin-bottom: 0; }
+
+.modality-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.modality-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.modality-name {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.modality-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.modality[data-modality="ayurveda"] .modality-dot { background: var(--ayurveda); }
+.modality[data-modality="ayurveda"] .modality-name { color: var(--ayurveda); }
+
+.modality[data-modality="herbalism"] .modality-dot { background: var(--herbalism); }
+.modality[data-modality="herbalism"] .modality-name { color: var(--herbalism); }
+
+.modality[data-modality="yoga"] .modality-dot { background: var(--yoga); }
+.modality[data-modality="yoga"] .modality-name { color: var(--yoga); }
+
+.modality[data-modality="breathwork"] .modality-dot { background: var(--breathwork); }
+.modality[data-modality="breathwork"] .modality-name { color: var(--breathwork); }
+
+/* ===== Product cards ===== */
+
+.product {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  transition: border-color 0.15s;
+}
+
+.product:hover { border-color: var(--border-strong); }
+
+.product.top-pick {
+  border-width: 2px;
+  padding: 17px 19px;
+}
+
+.modality[data-modality="ayurveda"] .product.top-pick { border-color: var(--ayurveda); }
+.modality[data-modality="herbalism"] .product.top-pick { border-color: var(--herbalism); }
+
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.product-header h3 {
+  font-size: 19px;
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+.product-header .qualifier {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.product-meta {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.modality[data-modality="ayurveda"] .pill-top {
+  background: var(--ayurveda-soft);
+  color: var(--ayurveda);
+}
+
+.modality[data-modality="herbalism"] .pill-top {
+  background: var(--herbalism-soft);
+  color: var(--herbalism);
+}
+
+/* ===== Reviews ===== */
+
+.reviews {
+  margin-bottom: 14px;
+}
+
+.review {
+  background: var(--surface-subtle);
+  border-radius: var(--radius);
+  padding: 11px 14px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.55;
+  border-left: 2px solid transparent;
+  transition: border-left-color 0.15s;
+}
+
+.review:last-child { margin-bottom: 0; }
+
+.modality[data-modality="ayurveda"] .review { border-left-color: var(--ayurveda-soft); }
+.modality[data-modality="herbalism"] .review { border-left-color: var(--herbalism-soft); }
+
+.review p {
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.review cite {
+  display: block;
+  font-size: 11px;
+  font-style: normal;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.more-reviews {
+  margin-top: 8px;
+}
+
+.more-reviews summary {
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 6px 0;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+}
+
+.more-reviews summary::-webkit-details-marker { display: none; }
+
+.more-reviews summary::before {
+  content: '+';
+  font-size: 14px;
+  font-weight: 400;
+  width: 14px;
+  height: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  transition: all 0.15s;
+}
+
+.more-reviews[open] summary::before { content: '−'; }
+
+.more-reviews summary:hover { color: var(--text); }
+
+.more-reviews summary:hover::before {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.more-reviews[open] > .review { margin-top: 8px; }
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.price {
+  font-size: 17px;
+  font-weight: 500;
+  font-family: 'Newsreader', Georgia, serif;
+}
+
+.cta-row { display: flex; gap: 8px; }
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  background: var(--bg);
+  transition: all 0.15s;
+}
+
+.cta:hover { border-color: var(--text); background: var(--surface-subtle); }
+.cta .arrow { font-size: 11px; opacity: 0.6; }
+
+/* ===== Yoga practices with pose illustrations ===== */
+
+.practices { list-style: none; }
+
+.practices-yoga li {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.practices-yoga li:last-child { border-bottom: none; padding-bottom: 4px; }
+.practices-yoga li:first-child { padding-top: 4px; }
+
+.pose-illustration {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  background: var(--yoga-soft);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--yoga);
+  padding: 8px;
+}
+
+.pose-illustration svg {
+  width: 100%;
+  height: 100%;
+}
+
+.practice-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.practice-text h3 {
+  font-size: 17px;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.practice-text .english {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-left: 4px;
+}
+
+.practice-text p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ===== Breathwork practices with video links ===== */
+
+.practices-breath li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.practices-breath li:last-child { border-bottom: none; padding-bottom: 4px; }
+.practices-breath li:first-child { padding-top: 4px; }
+
+.video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 6px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  background: var(--bg);
+  transition: all 0.15s;
+}
+
+.modality[data-modality="yoga"] .video-link:hover {
+  border-color: var(--yoga);
+  background: var(--yoga-soft);
+  color: var(--yoga);
+}
+
+.modality[data-modality="breathwork"] .video-link:hover {
+  border-color: var(--breathwork);
+  background: var(--breathwork-soft);
+  color: var(--breathwork);
+}
+
+.play-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  color: white;
+  flex-shrink: 0;
+}
+
+.modality[data-modality="yoga"] .play-icon { background: var(--yoga); }
+.modality[data-modality="breathwork"] .play-icon { background: var(--breathwork); }
+
+.play-icon svg {
+  width: 10px;
+  height: 10px;
+}
+
+/* ===== Doctor callout ===== */
+
+.doctor-callout {
+  background: var(--warning-bg);
+  border: 1px solid var(--warning-border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  margin-bottom: 48px;
+}
+
+.callout-label {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--warning);
+  margin-bottom: 8px;
+}
+
+.doctor-callout p:last-child {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* ===== Related conditions ===== */
+
+.related { margin-bottom: 64px; }
+.related .section-label { color: var(--text-muted); margin-bottom: 12px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--surface-subtle);
+  font-size: 13px;
+  color: var(--text);
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.chip:hover { background: var(--border); }
+
+/* ===== Site footer ===== */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface-subtle);
+  padding: 32px 0;
+  margin-top: 32px;
+}
+
+.site-footer p {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.site-footer a { color: var(--text-muted); }
+
+.site-footer .footer-meta {
+  margin-top: 6px;
+  color: var(--text-dim);
+}
+
+/* ===== Responsive ===== */
+
+@media (min-width: 720px) {
+  .prelude-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 32px 36px;
+  }
+}
+
+@media (min-width: 920px) {
+  .results-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  .condition-header h1 { font-size: 52px; }
+}
+
+@media (max-width: 520px) {
+  .container { padding: 0 18px; }
+
+  .condition-header h1 { font-size: 34px; }
+  .description { font-size: 16px; }
+
+  .header-inner { padding-top: 18px; padding-bottom: 18px; }
+  .logo { font-size: 22px; }
+
+  .product-footer { flex-direction: column; align-items: flex-start; }
+
+  .practices-yoga li { gap: 12px; }
+  .pose-illustration { width: 60px; height: 60px; }
+}
+
+/* =====================================
+   LANDING PAGE
+   ===================================== */
+
+.landing { padding: 0; }
+
+/* ===== Hero ===== */
+
+.hero {
+  padding: 64px 0 80px;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-inner {
+  max-width: 720px;
+  text-align: center;
+}
+
+.hero h1, .hero-headline {
+  font-family: 'Newsreader', Georgia, serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.15;
+  letter-spacing: -0.018em;
+  margin-bottom: 48px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text);
+}
+
+.search-prompt {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.search-wrapper {
+  max-width: 560px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.search-input-wrap {
+  display: flex;
+  align-items: center;
+  background: var(--surface);
+  border: 2px solid var(--border-strong);
+  border-radius: 14px;
+  padding: 0 18px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.search-input-wrap:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(45, 95, 63, 0.08);
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+#search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 18px 14px;
+  font-family: inherit;
+  font-size: 17px;
+  color: var(--text);
+  min-width: 0;
+}
+
+#search-input::placeholder {
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.04);
+  z-index: 10;
+  overflow: hidden;
+  text-align: left;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  transition: background 0.1s;
+}
+
+.result-item:last-child { border-bottom: none; }
+.result-item:hover { background: var(--surface-subtle); }
+
+.result-item.result-disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.result-item.result-disabled:hover { background: var(--surface); }
+
+.result-text { min-width: 0; }
+
+.result-name {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.result-region {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.result-status {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--surface-subtle);
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.result-status-available {
+  background: rgba(45, 95, 63, 0.08);
+  color: var(--accent);
+}
+
+.result-empty {
+  padding: 16px 20px;
+  font-size: 14px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.search-hint {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+.hint-link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: var(--accent);
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: rgba(45, 95, 63, 0.3);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s;
+}
+
+.hint-link:hover { text-decoration-color: var(--accent); }
+
+/* ===== Regions ===== */
+
+.regions {
+  padding: 64px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.regions .section-label {
+  text-align: center;
+  margin-bottom: 28px;
+  color: var(--text-muted);
+}
+
+.region-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.region-tile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.region-tile:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.region-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--surface-subtle);
+  color: var(--accent);
+}
+
+.region-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.region-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.region-name {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.region-count {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ===== How it works ===== */
+
+.how-it-works {
+  padding: 64px 0 80px;
+}
+
+.how-it-works .section-label {
+  text-align: center;
+  margin-bottom: 36px;
+  color: var(--text-muted);
+}
+
+.hiw-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.hiw-block {
+  padding: 0;
+}
+
+.hiw-num {
+  display: inline-block;
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 14px;
+  font-weight: 500;
+  width: 28px;
+  height: 28px;
+  line-height: 27px;
+  text-align: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  margin-bottom: 12px;
+}
+
+.hiw-block h3 {
+  font-size: 19px;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+
+.hiw-block p {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+/* ===== Landing responsive ===== */
+
+@media (min-width: 720px) {
+  .region-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hiw-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+}
+
+@media (min-width: 920px) {
+  .hero { padding: 96px 0 100px; }
+  .hero h1, .hero-headline { font-size: 52px; }
+
+  .region-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .hero { padding: 48px 0 60px; }
+  .hero h1, .hero-headline { font-size: 28px; margin-bottom: 36px; }
+  .search-prompt { font-size: 14px; margin-bottom: 12px; }
+
+  #search-input { font-size: 16px; padding: 16px 12px; }
+  .search-input-wrap { padding: 0 14px; }
+
+  .regions, .how-it-works { padding: 48px 0; }
+}
