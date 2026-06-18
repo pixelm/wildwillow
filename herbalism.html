@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>wildwillow — traditional &amp; integrative remedies for kids</title>
-  <meta name="description" content="Curated remedies for common childhood conditions, across Ayurveda, Western herbalism, yoga and breathwork.">
+  <title>wildwillow — Western herbalism for everyday conditions</title>
+  <meta name="description" content="Curated plant remedies for the conditions you see most. From the Western herbalism tradition.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,9 +14,9 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo">wildwillow</a>
+      <a href="herbalism.html" class="logo">wildwillow</a>
       <nav class="site-nav">
-        <a href="index.html">Browse</a>
+        <a href="herbalism.html">Browse</a>
         <a href="#">About</a>
       </nav>
     </div>
@@ -26,7 +26,8 @@
 
     <section class="hero">
       <div class="container hero-inner">
-        <h1 class="hero-headline">Curated remedies for common childhood conditions — across Ayurveda, Western herbalism, yoga and breathwork.</h1>
+        <p class="hero-eyebrow" data-modality="herbalism">Western herbalism</p>
+        <h1 class="hero-headline">Curated plant remedies for everyday conditions.</h1>
 
         <p class="search-prompt">What can we help with?</p>
 
@@ -41,7 +42,7 @@
           <div class="search-results" id="search-results" hidden></div>
         </div>
 
-        <p class="search-hint">Try <button class="hint-link" onclick="quickSearch('swimmer&apos;s ear')">swimmer's ear</button> · <button class="hint-link" onclick="quickSearch('constipation')">constipation</button> · <button class="hint-link" onclick="quickSearch('mosquito bites')">mosquito bites</button></p>
+        <p class="search-hint">Try <button class="hint-link" onclick="quickSearch('swimmer&apos;s ear')">swimmer's ear</button> · <button class="hint-link" onclick="quickSearch('sore throat')">sore throat</button> · <button class="hint-link" onclick="quickSearch('mosquito bites')">mosquito bites</button></p>
       </div>
     </section>
 
@@ -59,7 +60,7 @@
             </div>
             <div class="region-text">
               <span class="region-name">Ear, nose &amp; throat</span>
-              <span class="region-count">2 conditions</span>
+              <span class="region-count">4 conditions</span>
             </div>
           </a>
 
@@ -73,8 +74,8 @@
               </svg>
             </div>
             <div class="region-text">
-              <span class="region-name">Skin</span>
-              <span class="region-count">2 conditions</span>
+              <span class="region-name">Skin &amp; topical</span>
+              <span class="region-count">4 conditions</span>
             </div>
           </a>
 
@@ -86,33 +87,32 @@
             </div>
             <div class="region-text">
               <span class="region-name">Digestive</span>
-              <span class="region-count">3 conditions</span>
+              <span class="region-count">4 conditions</span>
             </div>
           </a>
 
-          <a href="#" class="region-tile" data-region="mind">
+          <a href="#" class="region-tile" data-region="sleep">
             <div class="region-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 4c-3 0-5 2-5 5 0 1.5.5 3 1.5 4v3h7v-3c1-1 1.5-2.5 1.5-4 0-3-2-5-5-5z"/>
-                <line x1="10" y1="19" x2="14" y2="19"/>
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
               </svg>
             </div>
             <div class="region-text">
-              <span class="region-name">Mind &amp; focus</span>
+              <span class="region-name">Sleep &amp; calm</span>
               <span class="region-count">2 conditions</span>
             </div>
           </a>
 
-          <a href="#" class="region-tile" data-region="travel">
+          <a href="#" class="region-tile" data-region="immune">
             <div class="region-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 17l6-12 7 14 5-9"/>
-                <circle cx="6" cy="20" r="1" fill="currentColor"/>
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6"/>
               </svg>
             </div>
             <div class="region-text">
-              <span class="region-name">Travel &amp; general</span>
-              <span class="region-count">1 condition</span>
+              <span class="region-name">Cold &amp; immune</span>
+              <span class="region-count">3 conditions</span>
             </div>
           </a>
 
@@ -127,17 +127,17 @@
           <div class="hiw-block">
             <span class="hiw-num">1</span>
             <h3>Search a condition</h3>
-            <p>Type what you're dealing with — itchy ear, trouble sleeping, mosquito bites.</p>
+            <p>Type what you're dealing with — itchy ear, sore throat, mosquito bites.</p>
           </div>
           <div class="hiw-block">
             <span class="hiw-num">2</span>
             <h3>Get curated answers</h3>
-            <p>One top pick per tradition. Honest about what each modality is good for.</p>
+            <p>A top pick plus alternatives, with real preparation guidance and what to skip.</p>
           </div>
           <div class="hiw-block">
             <span class="hiw-num">3</span>
-            <h3>Find a practitioner</h3>
-            <p>Connect with vetted Ayurvedic doctors, herbalists, and yoga therapists when you want personalized guidance.</p>
+            <h3>Find a herbalist</h3>
+            <p>Connect with practicing herbalists in your area when you want personalized guidance.</p>
           </div>
         </div>
       </div>
@@ -154,16 +154,23 @@
 
   <script>
     const conditions = [
-      { name: "Swimmer's ear", slug: "swimmers-ear", region: "Ear, nose & throat", available: true },
-      { name: "Seasonal allergies", slug: "seasonal-allergies", region: "Ear, nose & throat", available: false },
-      { name: "Mosquito bites", slug: "mosquito-bites", region: "Skin", available: false },
-      { name: "Minor cuts, scrapes & bruises", slug: "minor-cuts-scrapes-bruises", region: "Skin", available: false },
+      { name: "Swimmer's ear", slug: "swimmers-ear-herbalism", region: "Ear, nose & throat", available: true },
+      { name: "Sore throat", slug: "sore-throat", region: "Ear, nose & throat", available: false },
+      { name: "Cough", slug: "cough", region: "Ear, nose & throat", available: false },
+      { name: "Sinus congestion", slug: "sinus-congestion", region: "Ear, nose & throat", available: false },
+      { name: "Eczema", slug: "eczema", region: "Skin & topical", available: false },
+      { name: "Mosquito bites", slug: "mosquito-bites", region: "Skin & topical", available: false },
+      { name: "Cuts & scrapes", slug: "cuts-scrapes", region: "Skin & topical", available: false },
+      { name: "Mild burns", slug: "mild-burns", region: "Skin & topical", available: false },
       { name: "Constipation", slug: "constipation", region: "Digestive", available: false },
-      { name: "Diarrhea", slug: "diarrhea", region: "Digestive", available: false },
-      { name: "Food poisoning", slug: "food-poisoning", region: "Digestive", available: false },
-      { name: "Brain fog", slug: "brain-fog", region: "Mind & focus", available: true },
-      { name: "Mental fatigue", slug: "mental-fatigue", region: "Mind & focus", available: false },
-      { name: "Travel sickness", slug: "travel-sickness", region: "Travel & general", available: false }
+      { name: "Gas & bloating", slug: "gas-bloating", region: "Digestive", available: false },
+      { name: "Nausea", slug: "nausea", region: "Digestive", available: false },
+      { name: "Stomach upset", slug: "stomach-upset", region: "Digestive", available: false },
+      { name: "Trouble sleeping", slug: "trouble-sleeping", region: "Sleep & calm", available: false },
+      { name: "Anxiety & restlessness", slug: "anxiety", region: "Sleep & calm", available: false },
+      { name: "Common cold", slug: "common-cold", region: "Cold & immune", available: false },
+      { name: "Mild fever", slug: "mild-fever", region: "Cold & immune", available: false },
+      { name: "Recurring colds", slug: "recurring-colds", region: "Cold & immune", available: false }
     ];
 
     const input = document.getElementById('search-input');
@@ -253,7 +260,7 @@
       renderResults(term);
     }
 
-    const placeholders = ["swimmer's ear", "mosquito bites", "constipation", "mental fatigue", "travel sickness"];
+    const placeholders = ["swimmer's ear", "sore throat", "mosquito bites", "trouble sleeping", "common cold"];
     let placeholderIndex = 0;
     setInterval(() => {
       if (document.activeElement === input || input.value) return;

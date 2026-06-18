@@ -1,63 +1,109 @@
-# wildwillow.cc — demo prototype
+# wildwillow.cc — prototypes
 
-A static HTML/CSS prototype of the wildwillow.cc concept. No build step, no dependencies — just files.
+Static HTML/CSS prototypes for two parallel positionings of wildwillow. No build step, no dependencies.
 
-## What's here
+## File structure
 
-- `index.html` — landing page with search, body region tiles, and "how it works" section
-- `swimmers-ear.html` — the fully built condition page (the demo flow target)
-- `styles.css` — shared stylesheet for all pages
-- `README.md` — this file
+```
+wildwillow/
+├── index.html              # Four-modality landing (Ayurveda lead)
+├── herbalism.html          # Western herbalism landing
+├── vision.html             # Shared vision/strategy document
+├── styles.css              # Shared design system
+├── README.md               # This file
+│
+└── conditions/             # Condition pages
+    ├── swimmers-ear.html              # Four-modality treatment
+    ├── swimmers-ear-herbalism.html    # Western herbalism deep dive
+    └── brain-fog.html                 # Four-modality treatment
+```
 
-## Demo flow
+## The two prototypes
 
-1. Open `index.html` in a browser
-2. Type "swim" or "ear" in the search bar
-3. Click the "Swimmer's ear" result (or press Enter — it picks the first available match)
-4. Land on the swimmer's ear condition page
+**Four-modality (`index.html` → `conditions/swimmers-ear.html`, `conditions/brain-fog.html`)**
+Curated content across Ayurveda, Western herbalism, yoga, and breathwork. Each condition page shows where the four traditions converge and diverge, with editorial synthesis as the differentiator. Demo audience: integrative MD / clinician collaborators (e.g., Darshan Shah).
 
-The 8 other conditions appear in search results marked "Coming soon" — they're not built yet but show that the system handles a real catalog.
+**Western herbalism (`herbalism.html` → `conditions/swimmers-ear-herbalism.html`)**
+Single-modality deep dive. Real preparation guidance, branded product recommendations with collapsible reviews, and herbalism-specific framing. Demo audience: practicing herbalists (e.g., Ginger Webb).
+
+The two prototypes share styles.css and the vision document, but their landing pages don't reference each other. Send the right URL to the right audience.
+
+## Vision document
+
+`vision.html` is the strategic explainer — the "Zocdoc for alternative healing practitioners" framing, market sizing, risks. Shared between prototypes; can go to either audience.
+
+## Demo flows
+
+**Four-modality flow:**
+1. Open `index.html`
+2. Search "swim" or "brain"
+3. Click result → lands on `conditions/swimmers-ear.html` or `conditions/brain-fog.html`
+
+**Western herbalism flow:**
+1. Open `herbalism.html`
+2. Search "swim"
+3. Click result → lands on `conditions/swimmers-ear-herbalism.html`
 
 ## Preview locally
 
-Open `index.html` in any browser. It just works.
+Open `index.html` or `herbalism.html` in any browser. No server needed.
 
 ## Deploy to GitHub Pages
 
-1. Create a new repo (public is simpler).
-2. Drag these files into the repo root and commit.
-3. Repo → Settings → Pages → Source: **Deploy from branch** → Branch: **main** → Folder: **/ (root)** → Save.
-4. Wait ~60 seconds. Your site is live at `https://[username].github.io/[repo-name]/`.
+1. Create a public repo
+2. Push these files maintaining the directory structure
+3. Repo → Settings → Pages → Deploy from branch → main → `/` (root) → Save
+4. Live at `https://[username].github.io/[repo-name]/`
+
+URLs after deploy:
+- `wildwillow.cc/` → four-modality landing
+- `wildwillow.cc/herbalism.html` → herbalism landing
+- `wildwillow.cc/vision.html` → vision document
+- `wildwillow.cc/conditions/swimmers-ear-herbalism.html` → herbalism deep dive
 
 ## What's a placeholder vs. real
 
-**Real:** the search UX, all visible product names, brand names, classical Sanskrit terms, the editorial layout, modality colors, the YouTube tutorial links (Art of Living, Brett Larkin, Yoga with Adriene).
+**Real:**
+- Search UX, condition catalog architecture, editorial layout
+- Brand names (Herb Pharm, Wise Woman Herbals, Kerala Ayurveda, Banyan Botanicals, Wally's Natural)
+- Classical Sanskrit terms and Western herbalism nomenclature
+- Modality colors, design system
+- YouTube tutorial links (real channels) on four-modality pages
+- Vision document market data (practitioner counts, Headway comp)
 
-**Plausible placeholders that you should verify before publishing for real:**
-- Product prices ($12, $9, $18, etc.) — educated guesses
-- Star ratings and review counts — also estimates
-- Review snippet attribution (e.g. `r/ayurveda · u/khichdi_eater`) — illustrative, not actual Reddit users
-- YouTube video durations ("3 min", "5 min") — approximate
+**Plausible placeholders, verify before publishing:**
+- Product prices — estimates
+- Star ratings and review counts — illustrative
+- Review snippets and attribution (e.g. `r/herbalism · u/openwaterswim`) — fictional but realistic
+- The "100K practitioners" full-platform TAM number
+- Capital commitment placeholder in vision doc
 
-For the demo, these are fine. Before the site goes live publicly, verify and replace.
+## Adding new condition pages
 
-## Search behavior
+1. Create `conditions/[slug].html`
+2. In the relevant landing page, find the conditions array in the script
+3. Set `available: true` for that slug
+4. The search will now route to it
 
-The search uses a local in-page JS array of 9 conditions. Typing filters by name and body region. Only swimmer's ear is clickable. Available items get a green "View" badge; unbuilt items show "Coming soon" and are non-interactive. Press Enter to jump to the first available match.
+Match the slug to filename: `slug: "mosquito-bites"` → `conditions/mosquito-bites.html`
 
-## Notes on extending
+## Notes on extending the structure
 
-When you add the next 8 condition pages, they'll live at `/[slug].html` (matching the search slugs in the JS). Setting `available: true` in the conditions array unlocks them in search.
+Currently both prototypes live in the same directory tree, which works while there are only a few conditions per prototype. If the herbalism prototype grows to 20+ condition pages, consider a subdirectory split:
 
-For example, after building `mosquito-bites.html`:
-```js
-{ name: "Mosquito bites", slug: "mosquito-bites", region: "Skin", available: true }
 ```
+herbalism/index.html
+herbalism/conditions/*.html
+ayurveda/index.html
+ayurveda/conditions/*.html
+```
+
+Don't do that yet — the current flat structure stays easier to manage until each prototype has substantially more content.
 
 ## Fonts
 
-The page loads Newsreader (serif) and Inter (sans) from Google Fonts. First load takes ~200ms; subsequent loads are cached.
+Newsreader (serif) and Inter (sans) loaded from Google Fonts. First load ~200ms.
 
-## What's not in this prototype
+## What's not in these prototypes
 
-No real analytics. No actual affiliate tracking IDs (Amazon links go to search results). No SEO meta tags beyond title and description. No structured data. These all belong in v1 of the real site, not the demo.
+No analytics, no actual affiliate IDs (Amazon links go to search), no SEO meta beyond basic title/description, no structured data, no commenting (planned via Supabase for the vision page). These belong in production, not the demo.
